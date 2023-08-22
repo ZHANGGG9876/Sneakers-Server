@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.sneakers_shop_server.viewModel.SneakerViewModel" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/bg_bottom_sheet">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="7dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerOrderListat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:listitem="@layout/sneaker_item_request_each" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="8dp"
+            android:background="#CFCECE" />
+
+        <TextView
+            android:id="@+id/orderUser"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:text="@{`User: `+viewModel.order_shipped.userName}"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/orderAddress"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:text="@{`Address: `+viewModel.order_shipped.address}"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/orderDate"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:text="@{`Date: `+viewModel.order_shipped.date}"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/orderEmail"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:text="@{`Email: `+viewModel.order_shipped.userEmail}"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/orderPhone"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:text="@{`Phone: `+viewModel.order_shipped.userPhone}"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/orderTotal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="9dp"
+            android:text="@{`Total : `+viewModel.order_shipped.total.toString()+`€  `}"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnForward"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="@color/black"
+            android:text="@string/btnForward"
+            android:textColor="@color/white"
+            app:cornerRadius="90dp"
+            app:iconGravity="textEnd"
+            app:iconTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.063"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.800"
+            app:strokeColor="@color/gres"
+            app:strokeWidth="1dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDelete"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="30dp"
+            android:backgroundTint="@color/white"
+            android:text="@string/btnDelete"
+            android:textColor="@color/black"
+            app:cornerRadius="90dp"
+            app:icon="@drawable/ic_baseline_delete_outline_24"
+            app:iconGravity="textEnd"
+            app:iconTint="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.063"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.800"
+            app:strokeColor="#B6B5B5"
+            app:strokeWidth="1dp" />
+    </LinearLayout>
+</layout>

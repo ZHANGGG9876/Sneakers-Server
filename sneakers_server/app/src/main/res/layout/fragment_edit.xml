@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.sneakers_shop_server.viewModel.SneakerViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="650dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/sneakerImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="320dp"
+                    android:scaleType="centerCrop"
+                    android:transitionName="sneakerImage_big"
+                    app:imageUrl="@{viewModel.sneaker.image}"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/sneakerName"
+                    android:layout_width="385dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@{viewModel.sneaker.name}"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.063"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.890" />
+
+                <EditText
+
+                    android:id="@+id/sneakerGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_margin="10sp"
+                    android:hint="Gender"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/rounded_bordered_edittext_background"
+                    android:text="@{viewModel.sneaker.gender}"
+                    android:textSize="16sp"
+                    android:padding="5dp"/>
+                <EditText
+                    android:id="@+id/sneakerBrand"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_margin="10sp"
+                    android:hint="Brand"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/rounded_bordered_edittext_background"
+                    android:text="@{viewModel.sneaker.brand}"
+                    android:textSize="16sp"
+                    android:padding="5dp"/>
+
+                <EditText
+                    android:id="@+id/sneakerPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_margin="10sp"
+                    android:hint="Price"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/rounded_bordered_edittext_background"
+                    android:text="@{viewModel.sneaker.price.toString()}"
+                    android:textSize="16sp"
+                    android:padding="5dp"/>
+
+
+                <EditText
+                    android:id="@+id/sneakersSize"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="Size"
+                    android:background="@drawable/rounded_bordered_edittext_background"
+                    android:text="@{viewModel.sneaker.size.toString().replace('[',' ').replace(']',' ')}"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.063"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.890"
+                    android:padding="5dp"/>
+
+                <EditText
+                    android:id="@+id/sneakerDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10sp"
+                    android:hint="Description"
+                    android:layout_marginStart="16dp"
+                    android:text="@{viewModel.sneaker.description}"
+                    android:background="@drawable/rounded_bordered_edittext_background"
+                    android:textColor="#0C0C0C"
+                    android:textSize="16sp"
+                    android:padding="5dp"
+                    />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnUpdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:backgroundTint="@color/black"
+                    android:text="@string/btnUpdate"
+                    android:textColor="@color/white"
+                    app:cornerRadius="90dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.063"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.890"
+                    app:strokeColor="@color/gres"
+                    app:strokeWidth="1dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:backgroundTint="@color/white"
+                    android:text="@string/btnCancel"
+                    android:textColor="@color/black"
+                    app:cornerRadius="90dp"
+                    app:iconTint="@color/black"
+                    app:iconGravity="textEnd"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.063"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.890"
+                    app:strokeColor="#B6B5B5"
+                    app:strokeWidth="1dp" />
+
+                <TextView
+                    android:id="@+id/barra"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>

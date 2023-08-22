@@ -1,0 +1,105 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.sneakers_shop_server.viewModel.SneakerViewModel" />
+        <variable
+            name="order_shipped"
+            type="com.sneakers_shop_server.model.OrderModel" />
+        <variable
+            name="clickListener"
+            type="com.sneakers_shop_server.recycler.OrderListener" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="6dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:onClick="@{() -> clickListener.onClick(order_shipped)}"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="-3dp">
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="325dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="10dp"
+                android:text="@{`User: ` + order_shipped.userName}"
+                android:textColor="#040404"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="User Name" />
+
+            <TextView
+                android:id="@+id/userAddress"
+                android:layout_width="325dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="35dp"
+                android:text="@{order_shipped.status.toString() != `CANCELED`? `Deliver to ` + order_shipped.address : order_shipped.address  }"
+                android:textColor="#AE040404"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="User Address" />
+
+
+
+            <TextView
+                android:id="@+id/quantityItems"
+                android:layout_width="325dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="54dp"
+                android:text="@{String.valueOf(order_shipped.sneakers.size()) + ` Items · €`+order_shipped.total }"
+                android:textColor="#AE040404"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Status : PROCESSING" />
+
+            <TextView
+                android:id="@+id/orderStatus"
+                android:layout_width="325dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="72dp"
+                android:text="@{order_shipped.status.toString().replace(`_`,` `)}"
+                android:textColor="#90040404"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/userImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:imageUrl="@{order_shipped.sneakers[0].image}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.529"
+                tools:srcCompat="@tools:sample/avatars" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

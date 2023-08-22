@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/homeFragment"
+        android:title="@string/sneakers"
+        android:icon="@drawable/ic_baseline_manage_search_24"
+        />
+
+    <item android:id="@+id/requestFragment"
+        android:title="@string/request"
+        android:icon="@drawable/ic_baseline_request_page_24"
+        />
+
+    <item android:id="@+id/formFragment"
+        android:title="@string/add"
+        android:icon="@drawable/ic_round_add_circle_outline_24"
+        />
+
+    <item android:id="@+id/orderFragment"
+        android:title="@string/order"
+        android:icon="@drawable/ic_baseline_shopping_bag_24"
+        />
+    <item android:id="@+id/settingsFragment"
+        android:title="@string/Profile"
+        android:icon="@drawable/ic_baseline_supervised_user_circle_24"
+        />
+</menu>

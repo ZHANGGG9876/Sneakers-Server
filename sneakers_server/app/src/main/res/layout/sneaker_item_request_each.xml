@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+        <TextView
+            android:id="@+id/sneakerName"
+            android:layout_width="325dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="7dp"
+            android:textColor="#040404"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="User Name" />
+
+        <TextView
+            android:id="@+id/sneakerGender"
+            android:layout_width="325dp"
+            android:layout_height="19dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="28dp"
+            android:text="@{`Deliver to ` + order.address}"
+            android:textColor="#AE040404"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="User Address" />
+
+
+
+        <TextView
+            android:id="@+id/sneakerPrice"
+            android:layout_width="325dp"
+            android:layout_height="19dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="46dp"
+            android:text="@{String.valueOf(order.sneakers.size()) + ` Items · €`+order.total }"
+            android:textColor="#AE040404"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Status : PROCESSING" />
+
+        <TextView
+            android:id="@+id/sneakerQuantity"
+            android:layout_width="325dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="65dp"
+            android:text="@{order.status}"
+            android:textColor="#90040404"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/sneakerImage"
+            android:layout_width="77dp"
+            android:layout_marginStart="10dp"
+            android:layout_height="77dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.529"
+            tools:srcCompat="@tools:sample/avatars" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

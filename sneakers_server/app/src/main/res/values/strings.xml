@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">Nude Sole Server</string>
+    <string name="email">E-mail</string>
+    <string name="password">Password</string>
+    <string name="sneakers">Sneakers</string>
+    <string name="order">Orders</string>
+    <string name="Profile">Profile</string>
+    <string name="request">Requests</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="join_us">Join us</string>
+    <string name="sign_in">Sign in</string>
+    <string name="sign_in_googLe">Sign In With Google</string>
+    <string name="sneakerName">Name</string>
+    <string name="sneakerBrand">Brand</string>
+    <string name="btnAdd">ADD</string>
+    <string name="btnCancel">CANCEL</string>
+    <string name="sneakerGender">Gender</string>
+    <string name="sneakerPrice">Price</string>
+    <string name="sneakerSize">Size</string>
+    <string name="sneakerImageName">Image Name</string>
+    <string name="sneakerDescription">Description</string>
+    <string name="x">+</string>
+    <string name="add">Add</string>
+    <string name="add_image">ADD IMAGE</string>
+    <string name="btnSelectSize">Size Available</string>
+    <string name="btnFavorite">Favorite</string>
+    <string name="btnEdit">Edit</string>
+    <string name="btnDelete">Detele</string>
+    <string name="btnUpdate">UPDATE</string>
+    <string name="sneakerQuantity">Quantity</string>
+    <string name="btnSend">SEND</string>
+    <string name="btnCancelOrder">CANCEL ORDER</string>
+    <string name="btnForward">FORWARD</string>
+    <string name="btnLocation">LOCATION</string>
+    <string name="IconSearch">Search</string>
+    <string name="btnYes">Yes</string>
+    <string name="btnNo">No</string>
+    <string name="txtConfirm">Are you sure want to delete?</string>
+    <string name="btnLogOut">Log Out</string>
+</resources>

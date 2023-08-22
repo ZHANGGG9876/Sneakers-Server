@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:label="Home"
+        android:name="com.sneakers_shop_server.Fragment.HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_requestFragment"
+            app:destination="@id/requestFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_orderFragment"
+            app:destination="@id/orderFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_formFragment"
+            app:destination="@id/formFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderFragment"
+        android:label="Orders"
+        android:name="com.sneakers_shop_server.Fragment.OrderFragment"
+        tools:layout="@layout/fragment_order" >
+        <action
+            android:id="@+id/action_orderFragment_to_orderFragment"
+            app:destination="@id/orderFragment" />
+        <action
+            android:id="@+id/action_orderFragment_to_requestFragment"
+            app:destination="@id/requestFragment" />
+        <action
+            android:id="@+id/action_orderFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_orderFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/requestFragment"
+        android:label="Requests"
+        android:name="com.sneakers_shop_server.Fragment.RequestFragment"
+        tools:layout="@layout/fragment_request" >
+        <action
+            android:id="@+id/action_requestFragment_to_requestFragment"
+            app:destination="@id/requestFragment" />
+        <action
+            android:id="@+id/action_requestFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_requestFragment_to_orderFragment"
+            app:destination="@id/orderFragment" />
+        <action
+            android:id="@+id/action_requestFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_requestFragment_to_formFragment"
+            app:destination="@id/formFragment" />
+        <action
+            android:id="@+id/action_requestFragment_to_detailFragment"
+            app:destination="@id/requestFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.sneakers_shop_server.Fragment.SettingsFragment"
+        android:label="Settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_requestFragment"
+            app:destination="@id/requestFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_orderFragment"
+            app:destination="@id/orderFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/formFragment"
+        android:name="com.sneakers_shop_server.Fragment.FormFragment"
+        android:label="Form"
+        tools:layout="@layout/fragment_form"
+        />
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.sneakers_shop_server.Fragment.DetailFragment"
+        android:label="Sneakers Info"
+        tools:layout="@layout/fragment_detail">
+    <action
+        android:id="@+id/action_detailFragment_to_editFragment"
+        app:destination="@id/editFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="com.sneakers_shop_server.Fragment.EditFragment"
+        android:label="Sneakers Edit"
+        tools:layout="@layout/fragment_edit">
+        <action
+            android:id="@+id/action_editFragment_to_homeFragment"
+            app:destination="@+id/homeFragment"
+            />
+        </fragment>
+    <fragment
+        android:id="@+id/bottomSheetDialogFragment"
+        android:name="com.sneakers_shop_server.Fragment.BottomSheetDialog.BottomSheetDialogRequest"
+        android:label="BottomSheetDialogFragment"
+        tools:layout="@layout/bottom_sheet_request" >
+    </fragment>
+
+
+</navigation>
